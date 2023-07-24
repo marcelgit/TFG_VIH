@@ -1,3 +1,13 @@
+
+#+TITLE: RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MÉDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL
+#+AUTHOR: Autor: Álex Gisbert Lizaga
+#+AUTHOR: Tutores: María del Soto Montalvo Herranz
+#+AUTHOR: Raúl Cabido Valladolid
+#+LATEX_CLASS: article
+#+DATE: nil
+#+LANGUAGE: es
+[[~/Documentos/TFG_VIH/images/URJC-Logo.jpg]]
+#+COMMENT 4
 * 4 Propuesta de sistema para la predicción de posible infección de VIH
 En este capítulo se presenta la propuesta del sistema desarrollado para predecir si un paciente puede o no tener el VIH.
 ** 4.1 Introducción
