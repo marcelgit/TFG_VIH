@@ -2,7 +2,9 @@
 #+LATEX_CLASS_OPTIONS: [a4paper]
 #+LANGUAGE: es
 #+OPTIONS: date:nil \n:t toc:nil
-[[~/Documentos/TFG_VIH/images/URJC-Logo.jpg]]
+#+STARTUP: showall
+[[./images/URJC-Logo.jpg]]
+#+BEGIN_CENTER
 Escuela Técnica Superior de Ingeniería Informática
 Grado en Ingeniería Informática
 Curso 2022-2023
@@ -11,10 +13,13 @@ RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO
 Autor: Alex Gisbert Lizaga
 Tutores: María del Soto Montalvo Herranz
 Raúl Cabido Valladolid
+#+END_CENTER
 Agradecimientos
 A mi familia que me han acompañado y apoyado durante todo el proceso.
 Resumen
-Abstract
+#+BEGIN_abstract
+In the 1980s, a virus was detectedo
+#+END_abstract
 Acrónimos
 Indice de contenidos
 * COMMENT 1
@@ -52,7 +57,7 @@ Se ha desarrollado un sistema que, dada una nota clínica en castellano,  determ
 Se han propuesto diferentes enfoques. Por un lado, varios sistemas no supervisados, los cuales van a ser los sistemas base. Por otro, sistemas supervisados haciendo uso de aprendizaje automático y aprendizaje profundo.
 ** COMMENT 4.2
 ** Sistemas no supervisados
-Todos los sistemas no supervisados utilizan una estructura parecida, diferenciándose sólo en los diccionarios usados y en su preprocesamiento. Estos sistemas se denominan 'baselines' a los largo del documento y son: baseline 1, baseline 2, baseline 2 con preprocesamiento, baseline 3 y base line 3 con preprocesamiento.
+Todos los sistemas no supervisados utilizan una estructura parecida, diferenciándose sólo en los diccionarios usados y en su preprocesamiento. Estos sistemas se denominan 'baselines' a lo largo del documento y son: baseline 1, baseline 2, baseline 2 con preprocesamiento, baseline 3 y base line 3 con preprocesamiento.
 Los baselines son procesos informáticos compuestos por una entrada formada por las notas clínicas, seguidos de un preprocesamiento de diversa complejidad, una identificación de las palabras importantes del texto sobre un diccionario seleccionado y una salida que determina si el paciente tiene o no VIH.
 En la Figura 4.1. se detalla la arquitectura de los baselines no supervisados.
 [Figura 4.1]
@@ -85,13 +90,13 @@ Todo esto hizo que este sistema obtuviese mejores resultados que sus predecesore
 *** Introducción
 Para los sistemas supervisados se han utilizado los mismos cinco algoritmos de clasificación explicados en el capítulo anterior. Con cada algoritmo se puede obtener un resultado totalmente diferente aunque esto no significa que un algoritmo sea mejor que otro, sino que, un determinado algoritmo será más eficiente en este proyecto en concreto. Los algoritmos son muy sensibles a la cantidad de datos con los que se trabaja por lo que un proyecto diferente hará que los mismos algoritmos se comporten de manera distinta. Al final del proyecto se identificará cuál de los algoritmos se comporta mejor para este caso.
 Los sistemas se identifican por los datos de entrada, a saber, las notas clínicas, una clasificación en etiquetas (indicando qué notas muestran un paciente con VIH y cuáles no), un preprocesamiento (que puede ser nulo o de diferentes tipos), una división de los datos preprocesados para el entrenamiento, una vectorización (CountVectorizer o TfIdfVectorizer) y un entrenamiento de los algoritmos. El algoritmo determina si el paciente padece VIH o no.
-[Figura 4.2]
-La clasificación de las notas clı́nicas en etiquetas se realiza gracias a que los directorios en los que están contenidos las notas indican el estado del paciente.
-De esta forma, si una nota clı́nica pertenece al directorio ‘No VIH‘ se sabe que el paciente no tiene VIH y en caso de que no esté contenida en ese directorio, indicará lo contrario. Gracias a esto podemos contruir una estructura formada por la nota clı́nica en su totalidad y el estado del paciente.
-Existen cuatro tipos diferentes de preprocesamiento: un preprocesamiento nulo (texto plano sin procesar), otro que extrae las palabras y las acorta hasta su raíz (stemming y stop words, de esta forma se especifica que las palabras con una misma raíz son las mismas, sin tener en cuenta el uso del plural/singular o conjugaciones diferentes), un tercero que sólo extrae aquellas palabras identificadas en el diccionario del castellano como sustantivos y adjetivos (POS tagging) y, por último, el que extrae las palabras relacionadas con términos médicos (POS tagging sanidad).
+[[./images/URJC-Logo.png][Figura 4.2]]
+La clasificación de las notas clínicas en etiquetas se realiza gracias a que los directorios en los que están contenidos las notas indican el estado del paciente.
+De esta forma, si una nota clínica pertenece al directorio ‘No VIH‘ se sabe que el paciente no tiene VIH y en caso de que no esté contenida en ese directorio, indicará lo contrario. Gracias a esto podemos construir una estructura formada por la nota clínica en su totalidad y el estado del paciente.
+Existen cuatro tipos diferentes de preprocesamiento: un preprocesamiento nulo (texto plano sin procesar), otro que extrae las palabras y las acorta hasta su raíz (stemming y stop words, de esta forma se específica que las palabras con una misma raíz son las mismas, sin tener en cuenta el uso del plural/singular o conjugaciones diferentes), un tercero que sólo extrae aquellas palabras identificadas en el diccionario del castellano como sustantivos y adjetivos (POS tagging) y, por último, el que extrae las palabras relacionadas con términos médicos (POS tagging sanidad).
 El preprocesamiento se identifica con los números 0, 1, 2 y 3, respectivamente.
 La división de los datos preprocesados para el entrenamiento de los algoritmos consiste en una separación de los datos preprocesados y sus etiquetas en dos grupos (split): un grupo para el entrenamiento y otro grupo para contrastar los resultados denominado test. El grupo de entrenamiento será un 60 % del total de los datos y el test de un 20 % del total. El otro 20 % restante se usa para una comprobación final sobre el algoritmo más eficiente para este problema.
-A continuación, se procede a explicar cada uno de los sitema desarrollados.
+A continuación, se procede a explicar cada uno de los sitemas desarrollados.
 *** COMMENT 4.3.2
 *** Sistema 1
 Este primer sistema establece las bases mínimas para el entrenamiento de los algoritmos.
@@ -132,5 +137,3 @@ Este conjunto de sistemas se diferencia de los anteriores por su tipo de vectori
 *** Objetivos personales conseguidos y problemas encontrados
 *** Conclusión final
 ** Trabajos futuros
-Bibliografía
-Apéndides
