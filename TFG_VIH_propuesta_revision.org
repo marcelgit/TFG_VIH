@@ -4,68 +4,175 @@
 #+OPTIONS: date:nil \n:t toc:nil
 #+STARTUP: showall
 [[./images/URJC-Logo.jpg]]
-#+BEGIN_CENTER
-Escuela Técnica Superior de Ingeniería Informática
-Grado en Ingeniería Informática
-Curso 2022-2023
-Trabajo Fin de Grado
-RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL
-Autor: Alex Gisbert Lizaga
+#+BEGIN_EXPORT latex
+\begin{center}
+\LARGE{Escuela Técnica Superior de Ingeniería Informática}
+\end{center}
+#+END_EXPORT
+
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\Large\textbf{Grado en Ingeniería Informática}
+\end{center}
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\Large\textbf{Curso 2022-2023}
+\end{center}
+#+END_EXPORT
+
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\Large\textbf{Trabajo Fin de Grado}
+\end{center}
+#+END_EXPORT
+
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\Large{RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL}
+\end{center}
+#+END_EXPORT
+
+
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\normalsize{Autor: Alex Gisbert Lizaga}
 Tutores: María del Soto Montalvo Herranz
 Raúl Cabido Valladolid
-#+END_CENTER
+\end{center}
+#+END_EXPORT
 Agradecimientos
 A mi familia que me han acompañado y apoyado durante todo el proceso.
 Resumen
 #+BEGIN_abstract
-In the 1980s, a virus was detectedo
+In the 1980s, a virus was detected
 #+END_abstract
 Acrónimos
++ ECM Error cuadrático
 Indice de contenidos
-* COMMENT 1
+\begin{Huge}1\end{huge}
+\normalsize
 * Introducción
 ** Contexto
+Algunos de los datos más alarmantes sobre el VIH son [vihsidaoms]:
++ Se ha cobrado un total de 40,1 millones de vidas. (rango de [33,6 a 48,6]).
+
+Además, si una embarazada tiene VIH, se lo puede traspasar con bastante seguridad a su descendiente ya sea en el parto o durante el embarazo [vihsidaoms].
 ** Objetivo y alcance
+Aunque el VIH se identificó oficialmente el 20 de mayo de 1983 [histvih]... Aquí es donde entra la incorporación de proyectos como este
 ** Inteligencia artificial
+Aunque a lo largo del tiempo... [mcarthy]...[stnorv].
+El ejemplo más conocido...ChatGPT, el cual
 ** Estructura
-* COMMENT 2
+En esta sección presenta...En el capítulo 2 se indica las
+\begin{Huge}2\end{huge}
+\normalsize
 * Metodología software y tecnologías
+...[sarahlaoyan].
+Dentro del /Agile Manifesto/ se determinaron cuatro valores esenciales en la gestión ágil de los proyectos [agile]:
+[sentrio]:
+[zendesk]:
+*¿2.0.1?*
 ** Scrum
+Scrum [unir] es
+Dentro de este tipo de metodología, [dave]:
 ** Kanban
+[kanbanize].
+El tablero Kanban está compuesto por una serie de listas definidas por el usuario en las que se introducen, en forma de etiquetas, las tareas que se quiere gestionar.
 ** Tecnologías
++ NLTK. ...[bird].
+  SpaCy. ...[spacy].
+Existen muchas herramientas ... :
++ Scikit-learn. ... [sklearn].
+  Hugging face. ... [keepcoding3]. [huggingface].
+
+[tensorflow].
 * COMMENT 3
 * Modelos de Inteligencia Artificial
 ** Procesamiento del Lenguaje Natural
 *** Procesos dentro del PLN
+[dplai]:
++ Tokenización. ... u otras opciones como ngramas ...
+  Stemming y Lemmatization.
+  Segmentación.
+  Eliminación de stop words. ... [bbpro].
+[[./images/Figura_3_1.png]]
+#+BEGIN_CENTER
+Figura 3.1: Ejemplo detección de entidades nombradas [ner].
+#+END_CENTER
 ** Aprendizaje automático
 *** Tipos de aprendizaje automático
+...[kcoding1]:
 *** Algoritmos
+...[coursera]:
+#+BEGIN_EXPORT latex
+\begin{equation}
+P(h-d)=(P(d-h)*P(h))/P(d)
+\end{equation}
+#+END_EXPORT
+...[joseph].
+En la Figura 3.2 se muestra un ejemplo gráfico explicativo.
+[[./images/Figura_3_2.png]]
+#+BEGIN_CENTER
+Figura 3.2: Ejemplo gráfico del SVC [badreesh].
+#+END_CENTER
+El objetivo de la Regresión Lineal es identificar los mejores valores para /w/ y /b/, de manera que representen de la mejor forma posible la relación entre /x/ e /y/.
+[sotaquira].
+[[./images/Figura_3_3.png]]
+#+BEGIN_CENTER
+Figura 3.3: Ejemplo gráfico del algoritmo KNN [geeks].
+#+END_CENTER
+En la Figura 3.4 se muestra un ejemplo de un árbol de decisión.
+[[./images/Figura_3_4.png]]
+#+BEGIN_CENTER
+Figura 3.4: Ejemplo explicativo de un árbol de decisión [mbaabu].
+#+END_CENTER
 *** Partes del aprendizaje automático supervisado
+[[./images/Figura_3_5.png]]
+#+BEGIN_CENTER
+Figura 3.5: Ecuación Tf-Idf [keepcoding2].
+#+END_CENTER
 *** Entrenamiento
 ** Aprendizaje profundo
 *** Machine learning vs Deep learning
+...(el perceptrón) son capaces de, a través
 *** Entrada de datos y preprocesamiento
 *** Modelo
+A continuación se muestra un ejemplo de red neuronal en la Figura 3.6
+[[./images/Figura_3_6.png]]
+#+BEGIN_CENTER
+Figura 3.6: Ejemplo de red neuronal[adictec].
+#+END_CENTER
 *** Entrenamiento
+Continuamente se presentan...La información procedente de esta comparación se propaga de forma a través de la red, ... en caso de que *halla* algún
 *** Gradiente
-* COMMENT 4
+En la Figura 3.7 se muestra una representación gráfica de un descenso de gradiente.
+[[./images/Figura_3_7.png]]
+Figura 3.7: Ejemplo gráfico de Gradiente [niklasdonges].
+#+BEGIN_EXPORT latex
+\Huge{4}\normalsize
+#+END_EXPORT
 * Propuesta de sistema para la predicción de posible infección de VIH
 En este capítulo se presenta la propuesta del sistema desarrollado para predecir si un paciente puede o no tener el VIH.
-** COMMENT 4.1
 ** Introducción
 Se ha desarrollado un sistema que, dada una nota clínica en castellano,  determina si es probable que el paciente tenga VIH o no. En caso positivo, el profesional de salud deberá realizarle la prueba serológica para determinar definitivamente el estado de la infección.
 Se han propuesto diferentes enfoques. Por un lado, varios sistemas no supervisados, los cuales van a ser los sistemas base. Por otro, sistemas supervisados haciendo uso de aprendizaje automático y aprendizaje profundo.
-** COMMENT 4.2
 ** Sistemas no supervisados
-Todos los sistemas no supervisados utilizan una estructura parecida, diferenciándose sólo en los diccionarios usados y en su preprocesamiento. Estos sistemas se denominan 'baselines' a lo largo del documento y son: baseline 1, baseline 2, baseline 2 con preprocesamiento, baseline 3 y base line 3 con preprocesamiento.
+Todos los sistemas no supervisados utilizan una estructura parecida, diferenciándose sólo en los diccionarios usados y en su preprocesamiento. Estos sistemas se denominan 'baselines' a lo largo del documento y son: baseline 1, baseline 2, baseline 2 con preprocesamiento, baseline 3 y baseline 3 con preprocesamiento.
 Los baselines son procesos informáticos compuestos por una entrada formada por las notas clínicas, seguidos de un preprocesamiento de diversa complejidad, una identificación de las palabras importantes del texto sobre un diccionario seleccionado y una salida que determina si el paciente tiene o no VIH.
 En la Figura 4.1. se detalla la arquitectura de los baselines no supervisados.
-[Figura 4.1]
+[[./images/Figura_4_1.png]]
+Figura 4.1: Arquitectura baselines.
 Se han utilizado dos diccionarios diferentes. Uno de ellos se obtuvo a partir de un glosario de la web ClinicalInfo [8]. En él aparecen términos relacionados con el VIH y su explicación y se desarrolló un automatismo que recopila aquellas palabras importantes y las incluye en el diccionario usado. El otro diccionario proviene de unas tablas con las enfermedades y síntomas proporcionadas por doctores de enfermedades infecciosas del Hospital Universitario Fundación Alcorcón. Cada uno de los doctores han asignado una ponderación determinando el grado de relación con el VIH.
 *** COMMENT 4.2.1
 *** Baseline 1
 Esta primera aproximación es la más sencilla. No preprocesa el texto de las notas médicas y busca las palabras completas en el diccionario. En caso de encontrar una coincidencia, el algoritmo incrementa la probabilidad de infección hasta un tope establecido, momento en el que se determina que el paciente tiene VIH.
-Por ejemplo, en un extracto de una de las notas clínicas dice: '/En marzo de 2004 presentó meningitis criptocócica caracterizada por cefalea, compromiso cualitativo de conciencia, fiebre y signología mníngea/'. El sistema recorre la oración e identifica 'meningitis criptocócica' en el diccionario, incrementando la probabilidad. Hace lo mismo para 'cefalea', 'fiebre' y 'sgnología meníngea'. Esta oración por sí misma eleva la probabilidad enormemente y provoca que, con unas pocas coincidencias extra, determine que el paciente tiene VIH.
+Por ejemplo, en un extracto de una de las notas clínicas dice: '/En marzo de 2004 presentó meningitis criptocócica caracterizada por cefalea, compromiso cualitativo de conciencia, fiebre y signología meníngea/'. El sistema recorre la oración e identifica 'meningitis criptocócica' en el diccionario, incrementando la probabilidad. Hace lo mismo para 'cefalea', 'fiebre' y 'signología meníngea'. Esta oración por sí misma eleva la probabilidad enormemente y provoca que, con unas pocas coincidencias extra, determine que el paciente tiene VIH.
 Este sistema es susceptible de devolver cantidades de falsos positivos inasumibles. Es por ello que se abordó el sistema 'baseline 2'.
 *** COMMENT 4.2.2
 *** Baseline 2
@@ -81,8 +188,12 @@ Para evitar falsos positivos se ha establecido un tope tal que sea necesario ide
 Por ejemplo, en esta oración sacada de una de las notas clínicas: '/Posteriormente, el 21.05.04 reingresó por sospecha de reactivación de meningitis por criptococo por cefalea intensa, alza térmica, compromiso del estado general de una semana de evolución, signología meníngea, sin focalidad neurológica ni compromiso de conciencia/'. El sistema identificaría 'meningitis' en el diccionario con una ponderación de 3.2. También identificaría 'cefalea' con un aponderación de 1.7. Ambos indicadores suman 4.9. Dado un tope de 7.0 significa que el sistema no identifica contagio por VIH.
 Sin embargo, existen enfermedades inequívocas de VIH, es decir, si el paciente tiene alguna de estas enfermedades, se tiene la certeza de que tiene VIH. Para estas enfermedades específicas es suficiente identificarlas dentro del informe médico para determinar que es un caso positivo, esto es, funcionan como cortocircuito, no necesitan que se alcance el tope.
 Por otra parte, se ha decidido que los síntomas no sean suficientes para indicar la infección por VIH por lo que deben ir acompañados de alguna enfermedad para que ponderen en el resultado.
-Por ejemplo, si en la frase '/Padecía de fiebre, dolores de cabeza, cansancio y escalofríos/', el sistema reconoce las palabras en el diccionario como síntomas y, al no estar acompañados de una enfermedad, el resultado sería 0, indicando que persona seguramente no tenga VIH. En cambio, si la frase fuese: '/Padecía de fiebre, dolores de cabeza, cansancio y escalofríos y con anterioridad fue diagnosticado con meningitis/', en este caso sí se tendrían en cuenta los síntomas, sumando un total de xxxxx.
-_(tal como dice ella, vendría bien una tabla de ponderaciones, aunque sea limitada)_
+Por ejemplo, si en la frase '/Padecía de fiebre, dolores de cabeza, cansancio y escalofríos/', el sistema reconoce las palabras en el diccionario como síntomas y, al no estar acompañados de una enfermedad, el resultado sería 0, indicando que la persona seguramente no tenga VIH. En cambio, si la frase fuese: '/Padecía de fiebre, dolores de cabeza, cansancio y escalofríos y con anterioridad fue diagnosticado con meningitis/', en este caso sí se tendrían en cuenta los síntomas, sumando un total de 4.9.
+En la Figura 4.2 se muestra una de las tablas de los doctores que se ha utilizado como diccionario para este sistema base.
+[[./images/Figura_4_2.png]]
+#+BEGIN_CENTER
+Figura 4.2: Ejemplo de tabla de doctores ponderando enfermedades definitorias.
+#+END_CENTER
 Todo esto hizo que este sistema obtuviese mejores resultados que sus predecesores, pero seguía siendo insuficiente ya que había un gran número de pacientes a los que no era capaz de identificar su infección de VIH. Debido a estas problemáticas, se decidió mejorar la eficiencia cambiando a un sistema de aprendizaje automático.
 ** COMMENT 4.3
 ** Sistemas supervisados: Aprendizaje automático
