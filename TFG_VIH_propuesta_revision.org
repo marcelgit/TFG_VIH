@@ -6,45 +6,23 @@
 [[./images/URJC-Logo.jpg]]
 #+BEGIN_EXPORT latex
 \begin{center}
-\LARGE{Escuela Técnica Superior de Ingeniería Informática}
-\end{center}
-#+END_EXPORT
-
-
-#+BEGIN_EXPORT latex
-\begin{center}
-\Large\textbf{Grado en Ingeniería Informática}
-\end{center}
-#+END_EXPORT
-
-#+BEGIN_EXPORT latex
-\begin{center}
-\Large\textbf{Curso 2022-2023}
-\end{center}
-#+END_EXPORT
-
-
-#+BEGIN_EXPORT latex
-\begin{center}
-\Large\textbf{Trabajo Fin de Grado}
-\end{center}
-#+END_EXPORT
-
-
-#+BEGIN_EXPORT latex
-\begin{center}
-\Large{RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL}
-\end{center}
-#+END_EXPORT
-
-
-
-#+BEGIN_EXPORT latex
-\begin{center}
-\normalsize{Autor: Alex Gisbert Lizaga}
-Tutores: María del Soto Montalvo Herranz
+\LARGE{Escuela Técnica Superior de Ingeniería Informática}\\
+\vspace{3}
+\Large\textbf{Grado en Ingeniería Informática}\\
+\vspace{2}
+\Large\textbf{Curso 2022-2023}\\
+\vspace{2}
+\Large\textbf{Trabajo Fin de Grado}\\
+\vspace{3}
+\Large{RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL}\\
+\newline
+\newline
+\newline
+\normalsize{Autor: Alex Gisbert Lizaga}\\
+Tutores: María del Soto Montalvo Herranz\\
 Raúl Cabido Valladolid
 \end{center}
+\newpage
 #+END_EXPORT
 Agradecimientos
 A mi familia que me han acompañado y apoyado durante todo el proceso.
@@ -167,9 +145,10 @@ Todos los sistemas no supervisados utilizan una estructura parecida, diferenciá
 Los baselines son procesos informáticos compuestos por una entrada formada por las notas clínicas, seguidos de un preprocesamiento de diversa complejidad, una identificación de las palabras importantes del texto sobre un diccionario seleccionado y una salida que determina si el paciente tiene o no VIH.
 En la Figura 4.1. se detalla la arquitectura de los baselines no supervisados.
 [[./images/Figura_4_1.png]]
+#+BEGIN_CENTER
 Figura 4.1: Arquitectura baselines.
-Se han utilizado dos diccionarios diferentes. Uno de ellos se obtuvo a partir de un glosario de la web ClinicalInfo [8]. En él aparecen términos relacionados con el VIH y su explicación y se desarrolló un automatismo que recopila aquellas palabras importantes y las incluye en el diccionario usado. El otro diccionario proviene de unas tablas con las enfermedades y síntomas proporcionadas por doctores de enfermedades infecciosas del Hospital Universitario Fundación Alcorcón. Cada uno de los doctores han asignado una ponderación determinando el grado de relación con el VIH.
-*** COMMENT 4.2.1
+#+END_CENTER
+Se han utilizado dos diccionarios diferentes. Uno de ellos se obtuvo a partir de un glosario de la web ClinicalInfo *[glosario]*. En él aparecen términos relacionados con el VIH y su explicación y se desarrolló un automatismo que recopila aquellas palabras importantes y las incluye en el diccionario usado. El otro diccionario proviene de unas tablas con las enfermedades y síntomas proporcionadas por doctores de enfermedades infecciosas del Hospital Universitario Fundación Alcorcón. Cada uno de los doctores han asignado una ponderación determinando el grado de relación con el VIH.
 *** Baseline 1
 Esta primera aproximación es la más sencilla. No preprocesa el texto de las notas médicas y busca las palabras completas en el diccionario. En caso de encontrar una coincidencia, el algoritmo incrementa la probabilidad de infección hasta un tope establecido, momento en el que se determina que el paciente tiene VIH.
 Por ejemplo, en un extracto de una de las notas clínicas dice: '/En marzo de 2004 presentó meningitis criptocócica caracterizada por cefalea, compromiso cualitativo de conciencia, fiebre y signología meníngea/'. El sistema recorre la oración e identifica 'meningitis criptocócica' en el diccionario, incrementando la probabilidad. Hace lo mismo para 'cefalea', 'fiebre' y 'signología meníngea'. Esta oración por sí misma eleva la probabilidad enormemente y provoca que, con unas pocas coincidencias extra, determine que el paciente tiene VIH.
@@ -201,8 +180,11 @@ Todo esto hizo que este sistema obtuviese mejores resultados que sus predecesore
 *** Introducción
 Para los sistemas supervisados se han utilizado los mismos cinco algoritmos de clasificación explicados en el capítulo anterior. Con cada algoritmo se puede obtener un resultado totalmente diferente aunque esto no significa que un algoritmo sea mejor que otro, sino que, un determinado algoritmo será más eficiente en este proyecto en concreto. Los algoritmos son muy sensibles a la cantidad de datos con los que se trabaja por lo que un proyecto diferente hará que los mismos algoritmos se comporten de manera distinta. Al final del proyecto se identificará cuál de los algoritmos se comporta mejor para este caso.
 Los sistemas se identifican por los datos de entrada, a saber, las notas clínicas, una clasificación en etiquetas (indicando qué notas muestran un paciente con VIH y cuáles no), un preprocesamiento (que puede ser nulo o de diferentes tipos), una división de los datos preprocesados para el entrenamiento, una vectorización (CountVectorizer o TfIdfVectorizer) y un entrenamiento de los algoritmos. El algoritmo determina si el paciente padece VIH o no.
-[[./images/URJC-Logo.png][Figura 4.2]]
-La clasificación de las notas clínicas en etiquetas se realiza gracias a que los directorios en los que están contenidos las notas indican el estado del paciente.
+[[./images/Figura_4_3.png]]
+#+BEGIN_CENTER
+Figura 4.3: Arquitectura de sistemas supervisados
+#+END_CENTER
+La clasificación de las notas clínicas en etiquetas se realiza gracias a que los directorios, en los que están contenidas las notas, indican el estado del paciente.
 De esta forma, si una nota clínica pertenece al directorio ‘No VIH‘ se sabe que el paciente no tiene VIH y en caso de que no esté contenida en ese directorio, indicará lo contrario. Gracias a esto podemos construir una estructura formada por la nota clínica en su totalidad y el estado del paciente.
 Existen cuatro tipos diferentes de preprocesamiento: un preprocesamiento nulo (texto plano sin procesar), otro que extrae las palabras y las acorta hasta su raíz (stemming y stop words, de esta forma se específica que las palabras con una misma raíz son las mismas, sin tener en cuenta el uso del plural/singular o conjugaciones diferentes), un tercero que sólo extrae aquellas palabras identificadas en el diccionario del castellano como sustantivos y adjetivos (POS tagging) y, por último, el que extrae las palabras relacionadas con términos médicos (POS tagging sanidad).
 El preprocesamiento se identifica con los números 0, 1, 2 y 3, respectivamente.
@@ -218,10 +200,10 @@ Aun siendo el más sencillo y el que, a priori, se debería comportar peor, los 
 Con la misma vectorización que el sistema 1, se utiliza el preprocesamiento 1, es decir, con tokenización, stemming y eliminación de stop words. Esto implica que el vocabulario es menor y, por tanto, también el tamaño de los vectores de entrada al algoritmo.
 *** COMMENT 4.3.4
 *** Sistema 3
-Con la misma vectorización que los sistemas 1 y 2, su preprocesamiento es 2 _(aunque pones el 3, creo que te refieres al 3º, por tanto es el 2)_ que incluye POS tagging. Este preprocesamiento consigue identificar y recoger sólo aquellas palabras dentro de los informes médicos que sean adjetivos y sustantivos. Esto implica la eliminación de stop words de forma automática casi en su totalidad.
+Con la misma vectorización que los sistemas 1 y 2, su preprocesamiento es 2  que incluye POS tagging. Este preprocesamiento consigue identificar y recoger sólo aquellas palabras dentro de los informes médicos que sean adjetivos y sustantivos. Esto implica la eliminación de stop words de forma automática casi en su totalidad.
 *** COMMENT 4.3.5
 *** Sistema 4
-Utiliza la misma vectorización que los sistemas anteriores y un preprocesamiento 3 _(el 4º es el 3)_, el cual determina el uso de un proyecto sacado de Hugging Face de Leonardo Campillos-Llanos [7]. Este proyecto, denominado Medical-NER, realiza un POS tagging del diccionario español añadiendo etiquetas que determinan hasta en cuatro grupos, el tipo de grupo semántico dentro del Unified Medical Languaje System (UMLS). Siendo estas cuatro etiquetas:
+Utiliza la misma vectorización que los sistemas anteriores y un preprocesamiento 3, el cual establece el uso de un proyecto sacado de Hugging Face de Leonardo Campillos-Llanos *[campillosetal-midm2021]*. Este proyecto, denominado Medical-NER, realiza un POS tagging del diccionario español añadiendo etiquetas que determinan hasta en cuatro grupos, el tipo de grupo semántico dentro del Unified Medical Languaje System (UMLS). Siendo estas cuatro etiquetas:
 + *ANAT:* anatomía y partes del cuerpo.
   *CHEM:* entidades químicas y sustancias farmacológicas.
   *DISO:* condiciones patológicas.
