@@ -1,44 +1,58 @@
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [a4paper]
 #+LANGUAGE: es
-#+OPTIONS: date:nil \n:t toc:nil
+#+OPTIONS: date:nil \n:t
 #+STARTUP: showall
 [[./images/URJC-Logo.jpg]]
-#+BEGIN_EXPORT latex
-\begin{center}
-\LARGE{Escuela Técnica Superior de Ingeniería Informática}\\
-\vspace{3}
-\Large\textbf{Grado en Ingeniería Informática}\\
-\vspace{2}
-\Large\textbf{Curso 2022-2023}\\
-\vspace{2}
-\Large\textbf{Trabajo Fin de Grado}\\
-\vspace{3}
-\Large{RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL}\\
-\newline
-\newline
-\newline
-\normalsize{Autor: Alex Gisbert Lizaga}\\
-Tutores: María del Soto Montalvo Herranz\\
+#+BEGIN_CENTER
+\LARGE{Escuela Técnica Superior de Ingeniería Informática}
+
+
+\Large\textbf{Grado en Ingeniería Informática}
+
+\Large\textbf{Curso 2022-2023}
+
+\Large\textbf{Trabajo Fin de Grado}
+
+
+\Large\textbf{RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL}
+
+
+\small
+Autor: Alex Gisbert Lizaga
+Tutores: María del Soto Montalvo Herranz
 Raúl Cabido Valladolid
-\end{center}
+#+END_CENTER
 \newpage
-#+END_EXPORT
-Agradecimientos
+#+BEGIN_SECTION
+\large{Agradecimientos}\normalsize
 A mi familia que me han acompañado y apoyado durante todo el proceso.
-Resumen
+#+END_SECTION
+\newpage
+#+BEGIN_SECTION
+\large{Resumen}\normalsize
+#+END_SECTION
+\newpage
 #+BEGIN_abstract
 In the 1980s, a virus was detected
 #+END_abstract
-Acrónimos
-+ ECM Error cuadrático
+\newpage
+#+BEGIN_SECTION
+\large{Acrónimos}\normalsize
+- ECM Error cuadrático
+#+END_SECTION
+\newpage
+\large
 Indice de contenidos
-\begin{Huge}1\end{huge}
+\tableofcontents
+\normalzise
+\newpage
+\Huge{1}
 \normalsize
 * Introducción
 ** Contexto
 Algunos de los datos más alarmantes sobre el VIH son [vihsidaoms]:
-+ Se ha cobrado un total de 40,1 millones de vidas. (rango de [33,6 a 48,6]).
+- Se ha cobrado un total de 40,1 millones de vidas. (rango de [33,6 a 48,6]).
 
 Además, si una embarazada tiene VIH, se lo puede traspasar con bastante seguridad a su descendiente ya sea en el parto o durante el embarazo [vihsidaoms].
 ** Objetivo y alcance
@@ -48,7 +62,8 @@ Aunque a lo largo del tiempo... [mcarthy]...[stnorv].
 El ejemplo más conocido...ChatGPT, el cual
 ** Estructura
 En esta sección presenta...En el capítulo 2 se indica las
-\begin{Huge}2\end{huge}
+\newpage
+\begin{Huge}2\end{Huge}
 \normalsize
 * Metodología software y tecnologías
 ...[sarahlaoyan].
@@ -63,22 +78,23 @@ Dentro de este tipo de metodología, [dave]:
 [kanbanize].
 El tablero Kanban está compuesto por una serie de listas definidas por el usuario en las que se introducen, en forma de etiquetas, las tareas que se quiere gestionar.
 ** Tecnologías
-+ NLTK. ...[bird].
-  SpaCy. ...[spacy].
+- NLTK. ...[bird].
+- SpaCy. ...[spacy].
 Existen muchas herramientas ... :
-+ Scikit-learn. ... [sklearn].
-  Hugging face. ... [keepcoding3]. [huggingface].
+- Scikit-learn. ... [sklearn].
+- Hugging face. ... [keepcoding3]. [huggingface].
 
 [tensorflow].
-* COMMENT 3
+\newpage
+\Huge{3}
 * Modelos de Inteligencia Artificial
 ** Procesamiento del Lenguaje Natural
 *** Procesos dentro del PLN
 [dplai]:
-+ Tokenización. ... u otras opciones como ngramas ...
-  Stemming y Lemmatization.
-  Segmentación.
-  Eliminación de stop words. ... [bbpro].
+- Tokenización. ... u otras opciones como ngramas ...
+- Stemming y Lemmatization.
+- Segmentación.
+- Eliminación de stop words. ... [bbpro].
 [[./images/Figura_3_1.png]]
 #+BEGIN_CENTER
 Figura 3.1: Ejemplo detección de entidades nombradas [ner].
@@ -204,10 +220,10 @@ Con la misma vectorización que los sistemas 1 y 2, su preprocesamiento es 2  qu
 *** COMMENT 4.3.5
 *** Sistema 4
 Utiliza la misma vectorización que los sistemas anteriores y un preprocesamiento 3, el cual establece el uso de un proyecto sacado de Hugging Face de Leonardo Campillos-Llanos *[campillosetal-midm2021]*. Este proyecto, denominado Medical-NER, realiza un POS tagging del diccionario español añadiendo etiquetas que determinan hasta en cuatro grupos, el tipo de grupo semántico dentro del Unified Medical Languaje System (UMLS). Siendo estas cuatro etiquetas:
-+ *ANAT:* anatomía y partes del cuerpo.
-  *CHEM:* entidades químicas y sustancias farmacológicas.
-  *DISO:* condiciones patológicas.
-  *PROC:* diagnósticos, análisis de laboratorio, actividades de investigación médica y procedimientos terapéuticos.
+- *ANAT:* anatomía y partes del cuerpo.
+- *CHEM:* entidades químicas y sustancias farmacológicas.
+- *DISO:* condiciones patológicas.
+- *PROC:* diagnósticos, análisis de laboratorio, actividades de investigación médica y procedimientos terapéuticos.
 
 De este modo, el sistema sólo coge aquellas palabras dentro del informe que consiga indentificar en alguna de las etiquetas de la lista.
 *** COMMENT 4.3.6
@@ -215,18 +231,78 @@ De este modo, el sistema sólo coge aquellas palabras dentro del informe que con
 Este conjunto de sistemas se diferencia de los anteriores por su tipo de vectorización, usando TfIdfVectorizer. En cuanto al preprocesamiento, el sistema 5 usa el preprocesamiento 0, el 6 usa el preprocesamiento 1 y así, sucesivamente.
 ** COMMENT 4.4
 ** Sistemas supervisados: Aprendizaje profundo
+La última propuesta del trabajo ha sido explorar el uso de aprendizaje profundo aplicado al problema de encontrar posibles pacientes con VIH.
+Los sistemas contenidos en esta sección comparten la misma estructura que los sistemas de aprendizaje automático salvo por el uso de un modelo de red neuronal frente al modelo de algoritmos. También prescinde de la vectorización, puesto que la propia red neuronal realiza su propia vectorización.
+La red neuronal necesita un diccionario que contendrá las palabras tokenizadas de cada uno de los textos y se puede establecer el número máximo de tokenizaciones por capa (encoder). Del mismo modo, se define el número de capas, la densidad de cada capa y la función de activación de las capas intermedias o función rectificadora (ReLU).
+Para este caso se ha establecido un número de cinco capas: la capa de entrada, tres ocultas, con una densidad 64 y la de salida con densidad 2. El hecho de definir la capa de salida con densidad 2 se debe a que se desea que la red neuronal devuelva dos posibles resultados en la salida: para etiqueas no VIH y para etiquetas sí VIH. El mayor de entre las dos determinará la salida final del sistema.
+Una vez conformado el modelo de red neuronal se pasa al entrenamiento, que consiste en el mismo procedimiento que en el aprendizaje automático, es decir, se le entregan datos con un resultado conocido para el entrenamiento y otro conjunto de datos de test con el que se podrá a prueba. Para finalizar, se utiliza un último conjunto de datos, sin conocer la etiqueta de los datos de entrada, para realizar una predicción e indicar si el paciente tiene VIH o no. De esta forma se comprueba la eficacia del modelo de red neuronal con el entrenamiento empleado.
 *** COMMENT 4.4.1
 *** Sistemas
-* COMMENT 5
+Yo suprimiría este apartado porque ya se explica que se usan los mismo sistemas que en el aprendizaje automático pero sin necesidad de tokenizar. O sea, del 5 al 8.
+#+BEGIN_EXPORT latex
+\Huge{5}\normalsize
+#+END_EXPORT
 * Experimentación y resultados
+En este capítulo se muestran los resultados obtenidos de toda la experimentación llevada a cabo para cada uno de los sistemas propuestos. Además, se hace una comparación final para determinar qué sistema es el mejor para el problema de detección temprana del VIH en pacientes.
 ** Conjunto de datos
+Se ha trabajado con *¿ /un conjunto/ ?* de datos de notas clínicas obtenida de diferentes retos científicos relacionados con el procesamiento de textos clínicos en español:
++ MEDDOCAN. Conjunto de datos sintético de historias clínicas para anonimación *[MEDDOCAN]*
+  PHARMACONER. Glod standard annotations of Pharmacological Substances, Compounds and proteins in Spanish clinical case reports:
+El directorio del dataset está formado por cuatro carpetas, las cuales determinan el estado del paciente:
+- *No VIH.* Aquellos pacientes que no tienen VIH.
+- *VIH consolidado.* Pacientes infectados de VIH en un estado avanzado.
+- *VIH detectado.* Aquellos pacientes en los que se les ha detectado el VIH en un período de los últimos 5 años.
+- *VIH reciente.* Pacientes infectados de VIH en una fase templana y se les hace un seguimiento.
+Para este proyecto sólo se han tenido en cuenta las etiquetas que indican si el paciente tiene VIH (1) o no lo tiene (0). De esta forma podremos conformar lo datos de entrada para incorporarlos más adelante a los diferentes sistemas.
+Dentro de cada carpeta se pueden encontrar diferentes tipos de documentos médicos:
+- *Casos clínicos de atención primaria.*
+- *Casos clínicos de dermatología.*
+- *Casos clínicos de medicina interna.*
+- *Casos clínicos médicos tropical.*
+- *Casos clínicos de psiquiatría.*
+- *Casos clínicos de radiología.*
+- *Casos clinicos de urgencias.*
+- *Casos clínicos de enfermedades infecciosas.*
+- *Casos clínicos de oncología.*
+- *Informes clínicos.*
+
+En la Tabla 5.1 se muestra la cantidad de archivos en cada una de las carpetas:
+| Carpeta         | Cantidad |
+|-----------------+----------|
+| No VIH          |      307 |
+| VIH consolidado |       62 |
+| VIH detectado   |       30 |
+| VIH reciente    |       13 |
+|-----------------+----------|
+#+BEGIN_CENTER
+Tabla 5.1: Representación del número de informes en cada directorio.
+#+END_CENTER
+Esto supone un total de 105 archivos en los que se especifica que el paciente tiene VIH frente a los 307 que indican pacientes sin VIH. Debido a esta diferencia tan significativa, tanto los modelos del machine learning como los modelos del deep learning, serán mejores deduciendo el caso en el que un paciente no tenga VIH.
 ** Métricas de evaluación
 ** Sistemas no supervisados: Resultados
+Los datos obtenidos a través de la ejecución del baseline 1
 ** Resultados de los sistemas basados en aprendizaje automático clásico
+...
+Los resultados del sistema 2 *desembocaron*
+...
+Para el sistema 7,...mostraron una *desmejora* (deterioro o menoscabo)
+...
+Analizando los resultados se *concluye en que*
 ** Resultados obtenidos con los sistemas basados en aprendizaje profundo
-* COMMENT 6
+\Huge{6}\normalsize
 * Conclusiones y trabajos futuros
 ** Conclusiones
 *** Objetivos personales conseguidos y problemas encontrados
 *** Conclusión final
 ** Trabajos futuros
+Si bien en el ... modelos de *procesamiento natural del lenguaje* ...
+\newpage
+Bibliografía
+\newpage
+#+BEGIN_appendix
+\Huge{Apéndices}\normalsize
+A.1. Matrices de confusión de los sistemas de aprendizaje automático
+[[./images/Apendice_A_1.png]]
+A.2. Diferentes ejemplos del diccionario con evidencia científica
+[[./images/Apendice_A_2.png]]
+#+END_appendix
