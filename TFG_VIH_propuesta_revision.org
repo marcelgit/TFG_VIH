@@ -6,47 +6,69 @@
 [[./images/URJC-Logo.jpg]]
 #+BEGIN_CENTER
 \LARGE{Escuela Técnica Superior de Ingeniería Informática}
-
-
+\\
+\\
 \Large\textbf{Grado en Ingeniería Informática}
-
+\\
 \Large\textbf{Curso 2022-2023}
-
+\\
 \Large\textbf{Trabajo Fin de Grado}
-
-
+\\
+\\
 \Large\textbf{RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL}
-
-
+\\
+\\
 \small
 Autor: Alex Gisbert Lizaga
 Tutores: María del Soto Montalvo Herranz
 Raúl Cabido Valladolid
-#+END_CENTER
 \newpage
+#+END_CENTER
 #+BEGIN_SECTION
 \large{Agradecimientos}\normalsize
 A mi familia que me han acompañado y apoyado durante todo el proceso.
-#+END_SECTION
 \newpage
+#+END_SECTION
 #+BEGIN_SECTION
 \large{Resumen}\normalsize
+\\
+\\
+En la pasada década de los 80 se detectó por primera vez en *humanos un virus* =(yo quitaría la coma)=
+...
+Por último, en el *capítulo 7* =(no hay capítulo 7)=
+
+\newpage
 #+END_SECTION
-\newpage
 #+BEGIN_abstract
-In the 1980s, a virus was detected
-#+END_abstract
+In the 1980s, a virus was detected...with *HIV.Unfortunately* =(separar después del punto)=
+... *So, why not use an artificial* =(quizás why do not use)=
+This paper ... *passing through machine learning* =¿es una expresión válida?=
 \newpage
+#+END_abstract
 #+BEGIN_SECTION
 \large{Acrónimos}\normalsize
-- ECM Error cuadrático
-#+END_SECTION
+\\
+\\
+- ECM Error cuadrático medio
+- FN False negative
+- ...
+- SIDA *Síndrome* de inmunodeficiencia adquirida
+- ...
+- VIH Virus de la *inmunodeficiencia* humana
 \newpage
+#+END_SECTION
+#+BEGIN_COMMENT
 \large
 Indice de contenidos
-\tableofcontents
+\newpage
+Índice de tablas
+\newpage
+Índice de figuras
+\newpage
+Índice de códigos =(está vacío)=
 \normalzise
 \newpage
+#+END_COMMENT
 \Huge{1}
 \normalsize
 * Introducción
@@ -55,13 +77,18 @@ Algunos de los datos más alarmantes sobre el VIH son [vihsidaoms]:
 - Se ha cobrado un total de 40,1 millones de vidas. (rango de [33,6 a 48,6]).
 
 Además, si una embarazada tiene VIH, se lo puede traspasar con bastante seguridad a su descendiente ya sea en el parto o durante el embarazo [vihsidaoms].
+... Esto, sumado a que... hace que gran mayoría...
+Los síntomas y ... para la determinación del VIH =(para la detección del VIH)=
 ** Objetivo y alcance
-Aunque el VIH se identificó oficialmente el 20 de mayo de 1983 [histvih]... Aquí es donde entra la incorporación de proyectos como este
+Aunque el VIH se identificó oficialmente el 20 de mayo de 1983 [histvih]... Aquí es donde entra la incorporación de proyectos como éste
+...dejando otro problema para aquellos países menos desarrollados donde no tienen las cualidades =(capacidades)=
+El proyecto, ... Identificando los problemas de cada uno de los modelos, anteponiendose a ellos =(enfrentándose a ellos)=
 ** Inteligencia artificial
 Aunque a lo largo del tiempo... [mcarthy]...[stnorv].
-El ejemplo más conocido...ChatGPT, el cual
+... Desde un ^[en]foque humanoçomo
+El ejemplo más conocido ... ChatGPT, *el cual* =(sin tilde)=
 ** Estructura
-En esta sección presenta...En el capítulo 2 se indica las
+En esta sección =se= presenta... En el capítulo 2 *se indica las* =(en plural)=
 \newpage
 \begin{Huge}2\end{Huge}
 \normalsize
@@ -69,35 +96,56 @@ En esta sección presenta...En el capítulo 2 se indica las
 ...[sarahlaoyan].
 Dentro del /Agile Manifesto/ se determinaron cuatro valores esenciales en la gestión ágil de los proyectos [agile]:
 [sentrio]:
+Los desarrolladores ... tipo de metodologías las cuales =(me falta una coma)=
 [zendesk]:
+- Optimización ...
+- Aumento de ...
+- Mayor *satisafación* del cliente
+
 *¿2.0.1?*
+
 ** Scrum
 Scrum [unir] es
+
+- Planificación ...
+- Sprint diario.
+- Revisión del sprint.
+- Retrospectiva del sprint. =(falta el punto final del párrafo)=
+  
 Dentro de este tipo de metodología, [dave]:
 ** Kanban
 [kanbanize].
 El tablero Kanban está compuesto por una serie de listas definidas por el usuario en las que se introducen, en forma de etiquetas, las tareas que se quiere gestionar.
+
+[[./images/Figura_2_1.png]]
+#+BEGIN_CENTER
+Figura 2.1: Ejemplo de tablero Kandan.
+#+END_CENTER
 ** Tecnologías
 - NLTK. ...[bird].
 - SpaCy. ...[spacy].
+  
 Existen muchas herramientas ... :
 - Scikit-learn. ... [sklearn].
-- Hugging face. ... [keepcoding3]. [huggingface].
+- Hugging face. ... [keepcoding3].
+  ...
+  Se originó en ... [huggingface].
 
 [tensorflow].
 \newpage
 \Huge{3}
 * Modelos de Inteligencia Artificial
+En este capítulo *se explica más* =(plural)=
 ** Procesamiento del Lenguaje Natural
 *** Procesos dentro del PLN
 [dplai]:
-- Tokenización. ... u otras opciones como ngramas ...
-- Stemming y Lemmatization.
-- Segmentación.
+- Tokenización. ... u otras opciones como *ngramas* ...
+- Stemming y Lemmatization. Técnica que ... *y luego en el caso del Stemming* =(y luego, en el caso del Stemming,)= ... Para el caso de la Lemmatization*,* el proceso es el mismo pero*,* en vez de...
+- Segmentación. Además ... aquellas oraciones*,* las cuales ...
 - Eliminación de stop words. ... [bbpro].
 [[./images/Figura_3_1.png]]
 #+BEGIN_CENTER
-Figura 3.1: Ejemplo detección de entidades nombradas [ner].
+Figura 3.1: Ejemplo *de* detección de entidades nombradas [ner].
 #+END_CENTER
 ** Aprendizaje automático
 *** Tipos de aprendizaje automático
