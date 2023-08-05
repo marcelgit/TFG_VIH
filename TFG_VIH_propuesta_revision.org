@@ -1,25 +1,25 @@
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [a4paper]
 #+LANGUAGE: es
-#+OPTIONS: date:nil \n:t
+#+OPTIONS: date:nil \n:t toc:nil
 #+STARTUP: showall
 [[./images/URJC-Logo.jpg]]
 #+BEGIN_CENTER
 \LARGE{Escuela Técnica Superior de Ingeniería Informática}
-\\
-\\
+
+
 \Large\textbf{Grado en Ingeniería Informática}
-\\
+
 \Large\textbf{Curso 2022-2023}
-\\
+
 \Large\textbf{Trabajo Fin de Grado}
-\\
-\\
+
+
 \Large\textbf{RECONOCIMIENTO DEL VIH EN PACIENTES A PARTIR DE INFORMES MEDICOS MEDIANTE EL USO DE INTELIGENCIA ARTIFICIAL}
-\\
-\\
+
+
 \small
-Autor: Alex Gisbert Lizaga
+Autor: Álex Gisbert Lizaga
 Tutores: María del Soto Montalvo Herranz
 Raúl Cabido Valladolid
 \newpage
@@ -31,8 +31,8 @@ A mi familia que me han acompañado y apoyado durante todo el proceso.
 #+END_SECTION
 #+BEGIN_SECTION
 \large{Resumen}\normalsize
-\\
-\\
+
+
 En la pasada década de los 80 se detectó por primera vez en *humanos un virus* =(yo quitaría la coma)=
 ...
 Por último, en el *capítulo 7* =(no hay capítulo 7)=
@@ -47,8 +47,8 @@ This paper ... *passing through machine learning* =¿es una expresión válida?=
 #+END_abstract
 #+BEGIN_SECTION
 \large{Acrónimos}\normalsize
-\\
-\\
+
+
 - ECM Error cuadrático medio
 - FN False negative
 - ...
@@ -134,6 +134,7 @@ Existen muchas herramientas ... :
 [tensorflow].
 \newpage
 \Huge{3}
+\normalsize
 * Modelos de Inteligencia Artificial
 En este capítulo *se explica más* =(plural)=
 ** Procesamiento del Lenguaje Natural
@@ -152,11 +153,17 @@ Figura 3.1: Ejemplo *de* detección de entidades nombradas [ner].
 ...[kcoding1]:
 *** Algoritmos
 ...[coursera]:
-#+BEGIN_EXPORT latex
+- Naive Bayes. ... A partir de esto se puede calcular la probabilidad *de una hipótesis a partir de nuestros conocimientos* =(de una determinada hipótesis.)=
+
 \begin{equation}
-P(h-d)=(P(d-h)*P(h))/P(d)
+P(h-d)=\frac{\bigl(P(d-h) \cdot P(h)\bigr)}{P(d)}
 \end{equation}
-#+END_EXPORT
+
+Una vez se calcula... Esta probabilidad final se puede escribir de diferentes formas [nb]:
+- \begin{equation}MAP(h) = max\bigl(P(h-d)\bigr)\end{equation}
+- \begin{equation}MAP(h) = max\biggl(\frac{P(d-h) \cdot P(h)}{P(d)}\biggr)\end{equation}
+- \begin{equation}MAP(h) = max\bigl(P(d-h) \cdot P(h)\bigr)
+      
 ...[joseph].
 En la Figura 3.2 se muestra un ejemplo gráfico explicativo.
 [[./images/Figura_3_2.png]]
@@ -175,15 +182,22 @@ En la Figura 3.4 se muestra un ejemplo de un árbol de decisión.
 Figura 3.4: Ejemplo explicativo de un árbol de decisión [mbaabu].
 #+END_CENTER
 *** Partes del aprendizaje automático supervisado
+En esta sección...
+- *Entrada de datos.* La entrada... A consecuencia ... y una etiquetas *,* las cuales ... Estos dos componentes se denominan /x/ e /y/,
+  No solo es ... (*diferentes al anterior*) =(diferentes a los anteriores)=
 [[./images/Figura_3_5.png]]
 #+BEGIN_CENTER
 Figura 3.5: Ecuación Tf-Idf [keepcoding2].
 #+END_CENTER
 *** Entrenamiento
+El entrenamiento es la parte fundamental del aprendizaje automático *ya que, gracias a él,*
 ** Aprendizaje profundo
+El aprendizaje profundo ... del aprendizaje *automático, el cual*
+Conforme fue ... *que usa el cerebro, dividido en capas y capas de redes neuronales,*
 *** Machine learning vs Deep learning
-...(el perceptrón) son capaces de, a través
+...(el perceptrón) son capaces de, a través... Esto combinando resultados...
 *** Entrada de datos y preprocesamiento
+... Además, un correcto... antes de entrenar el modelo, ayuda =(sin la coma)=
 *** Modelo
 A continuación se muestra un ejemplo de red neuronal en la Figura 3.6
 [[./images/Figura_3_6.png]]
@@ -212,7 +226,7 @@ En la Figura 4.1. se detalla la arquitectura de los baselines no supervisados.
 #+BEGIN_CENTER
 Figura 4.1: Arquitectura baselines.
 #+END_CENTER
-Se han utilizado dos diccionarios diferentes. Uno de ellos se obtuvo a partir de un glosario de la web ClinicalInfo *[glosario]*. En él aparecen términos relacionados con el VIH y su explicación y se desarrolló un automatismo que recopila aquellas palabras importantes y las incluye en el diccionario usado. El otro diccionario proviene de unas tablas con las enfermedades y síntomas proporcionadas por doctores de enfermedades infecciosas del Hospital Universitario Fundación Alcorcón. Cada uno de los doctores han asignado una ponderación determinando el grado de relación con el VIH.
+Se han utilizado dos diccionarios diferentes. Uno de ellos se obtuvo a partir de un glosario de la web ClinicalInfo [glosario]. En él aparecen términos relacionados con el VIH y su explicación y se desarrolló un automatismo que recopila aquellas palabras importantes y las incluye en el diccionario usado. El otro diccionario proviene de unas tablas con las enfermedades y síntomas proporcionadas por doctores de enfermedades infecciosas del Hospital Universitario Fundación Alcorcón. Cada uno de los doctores ha asignado una ponderación determinando el grado de relación con el VIH.
 *** Baseline 1
 Esta primera aproximación es la más sencilla. No preprocesa el texto de las notas médicas y busca las palabras completas en el diccionario. En caso de encontrar una coincidencia, el algoritmo incrementa la probabilidad de infección hasta un tope establecido, momento en el que se determina que el paciente tiene VIH.
 Por ejemplo, en un extracto de una de las notas clínicas dice: '/En marzo de 2004 presentó meningitis criptocócica caracterizada por cefalea, compromiso cualitativo de conciencia, fiebre y signología meníngea/'. El sistema recorre la oración e identifica 'meningitis criptocócica' en el diccionario, incrementando la probabilidad. Hace lo mismo para 'cefalea', 'fiebre' y 'signología meníngea'. Esta oración por sí misma eleva la probabilidad enormemente y provoca que, con unas pocas coincidencias extra, determine que el paciente tiene VIH.
@@ -267,7 +281,7 @@ Con la misma vectorización que el sistema 1, se utiliza el preprocesamiento 1, 
 Con la misma vectorización que los sistemas 1 y 2, su preprocesamiento es 2  que incluye POS tagging. Este preprocesamiento consigue identificar y recoger sólo aquellas palabras dentro de los informes médicos que sean adjetivos y sustantivos. Esto implica la eliminación de stop words de forma automática casi en su totalidad.
 *** COMMENT 4.3.5
 *** Sistema 4
-Utiliza la misma vectorización que los sistemas anteriores y un preprocesamiento 3, el cual establece el uso de un proyecto sacado de Hugging Face de Leonardo Campillos-Llanos *[campillosetal-midm2021]*. Este proyecto, denominado Medical-NER, realiza un POS tagging del diccionario español añadiendo etiquetas que determinan hasta en cuatro grupos, el tipo de grupo semántico dentro del Unified Medical Languaje System (UMLS). Siendo estas cuatro etiquetas:
+Utiliza la misma vectorización que los sistemas anteriores y un preprocesamiento 3, el cual establece el uso de un proyecto sacado de Hugging Face de Leonardo Campillos-Llanos [campillosetal-midm2021]. Este proyecto, denominado Medical-NER, realiza un POS tagging del diccionario español añadiendo etiquetas que determinan hasta en cuatro grupos, el tipo de grupo semántico dentro del Unified Medical Languaje System (UMLS). Siendo estas cuatro etiquetas:
 - *ANAT:* anatomía y partes del cuerpo.
 - *CHEM:* entidades químicas y sustancias farmacológicas.
 - *DISO:* condiciones patológicas.
@@ -276,32 +290,32 @@ Utiliza la misma vectorización que los sistemas anteriores y un preprocesamient
 De este modo, el sistema sólo coge aquellas palabras dentro del informe que consiga indentificar en alguna de las etiquetas de la lista.
 *** COMMENT 4.3.6
 *** Sistemas 5 a 8
-Este conjunto de sistemas se diferencia de los anteriores por su tipo de vectorización, usando TfIdfVectorizer. En cuanto al preprocesamiento, el sistema 5 usa el preprocesamiento 0, el 6 usa el preprocesamiento 1 y así, sucesivamente.
+Este conjunto de sistemas se diferencia de los anteriores por su tipo de vectorización, usando TfIdfVectorizer. En cuanto al preprocesamiento, el sistema 5 usa el preprocesamiento 0, el 6 usa el preprocesamiento 1 y así sucesivamente.
 ** COMMENT 4.4
 ** Sistemas supervisados: Aprendizaje profundo
 La última propuesta del trabajo ha sido explorar el uso de aprendizaje profundo aplicado al problema de encontrar posibles pacientes con VIH.
 Los sistemas contenidos en esta sección comparten la misma estructura que los sistemas de aprendizaje automático salvo por el uso de un modelo de red neuronal frente al modelo de algoritmos. También prescinde de la vectorización, puesto que la propia red neuronal realiza su propia vectorización.
 La red neuronal necesita un diccionario que contendrá las palabras tokenizadas de cada uno de los textos y se puede establecer el número máximo de tokenizaciones por capa (encoder). Del mismo modo, se define el número de capas, la densidad de cada capa y la función de activación de las capas intermedias o función rectificadora (ReLU).
 Para este caso se ha establecido un número de cinco capas: la capa de entrada, tres ocultas, con una densidad 64 y la de salida con densidad 2. El hecho de definir la capa de salida con densidad 2 se debe a que se desea que la red neuronal devuelva dos posibles resultados en la salida: para etiqueas no VIH y para etiquetas sí VIH. El mayor de entre las dos determinará la salida final del sistema.
-Una vez conformado el modelo de red neuronal se pasa al entrenamiento, que consiste en el mismo procedimiento que en el aprendizaje automático, es decir, se le entregan datos con un resultado conocido para el entrenamiento y otro conjunto de datos de test con el que se podrá a prueba. Para finalizar, se utiliza un último conjunto de datos, sin conocer la etiqueta de los datos de entrada, para realizar una predicción e indicar si el paciente tiene VIH o no. De esta forma se comprueba la eficacia del modelo de red neuronal con el entrenamiento empleado.
+Una vez conformado el modelo de red neuronal se pasa al entrenamiento, que consiste en el mismo procedimiento que en el aprendizaje automático, es decir, se le entregan datos con un resultado conocido para el entrenamiento y otro conjunto de datos de test con el que se pondrá a prueba. Para finalizar, se utiliza un último conjunto de datos, sin conocer la etiqueta de los datos de entrada, para realizar una predicción e indicar si el paciente tiene VIH o no. De esta forma se comprueba la eficacia del modelo de red neuronal con el entrenamiento empleado.
 *** COMMENT 4.4.1
 *** Sistemas
-Yo suprimiría este apartado porque ya se explica que se usan los mismo sistemas que en el aprendizaje automático pero sin necesidad de tokenizar. O sea, del 5 al 8.
+=Yo suprimiría este apartado porque ya se explica que se usan los mismo sistemas que en el aprendizaje automático pero sin necesidad de tokenizar. O sea, del 5 al 8.=
 #+BEGIN_EXPORT latex
 \Huge{5}\normalsize
 #+END_EXPORT
 * Experimentación y resultados
 En este capítulo se muestran los resultados obtenidos de toda la experimentación llevada a cabo para cada uno de los sistemas propuestos. Además, se hace una comparación final para determinar qué sistema es el mejor para el problema de detección temprana del VIH en pacientes.
 ** Conjunto de datos
-Se ha trabajado con *¿ /un conjunto/ ?* de datos de notas clínicas obtenida de diferentes retos científicos relacionados con el procesamiento de textos clínicos en español:
-+ MEDDOCAN. Conjunto de datos sintético de historias clínicas para anonimación *[MEDDOCAN]*
-  PHARMACONER. Glod standard annotations of Pharmacological Substances, Compounds and proteins in Spanish clinical case reports:
-El directorio del dataset está formado por cuatro carpetas, las cuales determinan el estado del paciente:
+Se ha trabajado con *¿ /un conjunto/ ?* de datos de notas clínicas *obtenida* de diferentes retos científicos relacionados con el procesamiento de textos clínicos en español:
+- MEDDOCAN. Conjunto de datos sintético de historias clínicas para anonimación *[MEDDOCAN]*
+- PHARMACONER. Glod standard annotations of Pharmacological Substances, Compounds and proteins in Spanish clinical case reports: *referencias*
+El directorio del dataset está formado por cuatro *carpetas, las cuales* determinan el estado *del paciente*:
 - *No VIH.* Aquellos pacientes que no tienen VIH.
 - *VIH consolidado.* Pacientes infectados de VIH en un estado avanzado.
 - *VIH detectado.* Aquellos pacientes en los que se les ha detectado el VIH en un período de los últimos 5 años.
 - *VIH reciente.* Pacientes infectados de VIH en una fase templana y se les hace un seguimiento.
-Para este proyecto sólo se han tenido en cuenta las etiquetas que indican si el paciente tiene VIH (1) o no lo tiene (0). De esta forma podremos conformar lo datos de entrada para incorporarlos más adelante a los diferentes sistemas.
+Para este proyecto sólo se han tenido en cuenta las etiquetas que indican si el paciente tiene VIH (1) o no lo tiene (0). De esta forma podremos conformar los datos de entrada para incorporarlos más adelante a los diferentes sistemas.
 Dentro de cada carpeta se pueden encontrar diferentes tipos de documentos médicos:
 - *Casos clínicos de atención primaria.*
 - *Casos clínicos de dermatología.*
@@ -327,9 +341,30 @@ Tabla 5.1: Representación del número de informes en cada directorio.
 #+END_CENTER
 Esto supone un total de 105 archivos en los que se especifica que el paciente tiene VIH frente a los 307 que indican pacientes sin VIH. Debido a esta diferencia tan significativa, tanto los modelos del machine learning como los modelos del deep learning, serán mejores deduciendo el caso en el que un paciente no tenga VIH.
 ** Métricas de evaluación
+Fórmula del accuracy: \begin{equation}Accuracy = \frac{(TP + TN)}{(TP + TN + FN + FP)}\end{equation}
+Además del accuracy, el resultado de sistemas de clasificación se evalúa con las siguientes métricas [metrics]:
+- Precisión: \begin{equation}Precision = \frac{TP}{(TP + FP)}\end{equation}
+- Recall: \begin{equation}Recall = \frac{TP}{(TP + FN)}\end{equation}
+- F1-score: \begin{equation}F1-score = \frac{(2 \cdot Precision \cdot Recall)}{(Precision + Recall)}\end{equation}
+La pérdida ... Además, *en secciones anteriores se ha comentado* ... *para aprender y, en ese método,* ... De esta forma,
 ** Sistemas no supervisados: Resultados
-Los datos obtenidos a través de la ejecución del baseline 1
+En la Tablas 5.3 y 5.4 se presentan los resultados obtenidos por los sistemas no supervisados propuestos, basados en la matriz de confusión de la Tabla 5.2, vista previamente.
+=Tabla 5.3=
+=Tabla 5.4=
+Los datos obtenidos a través de la ejecución *del ¿baseline 1?*
+=revisar los %=
+Aunque el sistema base 2 tuvo una menor...
 ** Resultados de los sistemas basados en aprendizaje automático clásico
+
+
+
+
+*Estoy aquí*
+
+
+
+
+
 ...
 Los resultados del sistema 2 *desembocaron*
 ...
