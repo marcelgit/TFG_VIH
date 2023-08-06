@@ -355,19 +355,14 @@ Los datos obtenidos a través de la ejecución *del ¿baseline 1?*
 =revisar los %=
 Aunque el sistema base 2 tuvo una menor...
 ** Resultados de los sistemas basados en aprendizaje automático clásico
-
-
-
-
-*Estoy aquí*
-
-
-
-
-
+...
+El primer sistema *, el cual consistía*
 ...
 Los resultados del sistema 2 *desembocaron*
 ...
+El sistema 5 ... Aunque el uso de TfIdf suele dar mejores resultados que VountVectorizer, en este particular proyecto no es así. Se puede destacar ...
+...
+El sistema 6 consigue una mínima mejoría frente al sistema 2.
 Para el sistema 7,...mostraron una *desmejora* (deterioro o menoscabo)
 ...
 Analizando los resultados se *concluye en que*
@@ -385,7 +380,7 @@ Bibliografía
 #+BEGIN_appendix
 \Huge{Apéndices}\normalsize
 A.1. Matrices de confusión de los sistemas de aprendizaje automático
-[[./images/Apendice_A_1.png]]
+
 A.2. Diferentes ejemplos del diccionario con evidencia científica
-[[./images/Apendice_A_2.png]]
+[[./images/Figura_A_1.png]]
 #+END_appendix
